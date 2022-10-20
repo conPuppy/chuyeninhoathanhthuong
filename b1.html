@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập ký tự" id="chuoi">
+<br>
+<br>
+<button onclick="change()">Change</button>
+<br>
+<br>
+<div id="show"></div>
+<script>
+    let x="";
+    function change() {
+        let kq = "";
+        let a= document.getElementById("chuoi").value;
+        for(let i=0;i<a.length;i++){
+            x = a.charCodeAt(i);
+            if(x >= 65 && x <= 90){
+                     x += 32;
+            }
+            else{
+                x -= 32;
+            }
+            kq += String.fromCharCode(x);
+        }
+        document.getElementById("show").innerHTML=kq
+    }
+
+</script>
+</body>
+</html>
